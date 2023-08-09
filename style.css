@@ -9,6 +9,32 @@ body {
   font-family: "Work Sans", sans-serif;
 }
 
+/* Backsound */
+.backsound {
+  display: flex;
+  cursor: pointer;
+  position: fixed;
+  width: 35px;
+  height: 35px;
+  right: 0;
+  bottom: 20px;
+  border: 1px solid #ccc;
+  box-sizing: var(--shadow);
+  border-radius: 50%;
+  transform: translateX(-50px);
+  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s;
+  z-index: 999999999999999999999;
+}
+.backsound:hover {
+  background-color: rgba(247, 130, 221, 0.8);
+}
+.backsound span {
+  margin: auto;
+}
+/* Akhir Backsound */
+
 .hero::before {
   content: "";
   position: absolute;
@@ -388,6 +414,10 @@ body {
 @media (max-width: 576px) {
   html {
     font-size: 60%;
+  }
+
+  .backsound {
+    transform: translateX(-20px);
   }
 
   .simply-countdown > .simply-section {
