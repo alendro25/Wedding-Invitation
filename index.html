@@ -43,7 +43,9 @@
         <h1>MR. G & MRs. S</h1>
         <p>Akan melangsungkan resepsi pernikahan dalam :</p>
         <div class="simply-countdown"></div>
-        <a href="#info" class="btn btn-lg mt-4">Lihat Undangan</a>
+        <a href="#info" class="btn btn-lg mt-4" onclick="play()"
+          >Lihat Undangan</a
+        >
       </main>
     </section>
     <!-- Akhir Hero Section -->
@@ -412,13 +414,14 @@
     </section>
     <!-- Akhir Gallery Section -->
 
-     <!-- Backsound -->
-     <div class="backsound" id="backsound" onclick="playPause()">
+    <!-- Backsound -->
+    <div class="backsound" id="backsound" onclick="playPause()">
       <span>
-        <audio id="myAudio" autoplay="true" loop allow="autoplay;"" >
+        <audio id="myAudio" loop src="backsound/backsound.mp3">
           <source src="backsound/backsound.mp3" type="audio/mp3" />
           Your browser does not support the audio element.
         </audio>
+
         <i class="bi bi-music-note-list"></i>
       </span>
     </div>
