@@ -423,6 +423,61 @@
     </section>
     <!-- Akhir Gallery Section -->
 
+    <section class="rsvp" id="rsvp">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <h2>Konfirmasi Kehadiran</h2>
+            <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran.</p>
+          </div>
+        </div>
+
+        <form
+          class="row row-cols-md-auto g-3 align-items-center justify-content-center"
+          method="POST"
+          action="https://script.google.com/macros/s/AKfycbygjIQmVM_mtTuScjqAUtJOEGcnUd1xauPRDOGXb2ROc2S7EDJaiiFDYfeGWUcRWlHrQg/exec"
+          id="my-form"
+        >
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="nama" name="nama" />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="jumlah" class="form-label">Jumlah Kehadiran</label>
+              <input
+                type="number"
+                class="form-control"
+                id="jumlah"
+                name="jumlah"
+                min="1"
+                max="5"
+                length="1"
+                value="1"
+              />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="status" class="form-label"
+                >Konfirmasi Kehadiran</label
+              >
+              <select name="status" id="status" class="form-select">
+                <option selected>-- Pilih salah satu --</option>
+                <option value="HADIR">Hadir</option>
+                <option value="TIDAK HADIR">Tidak Hadir</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12" style="margin-top: 35px">
+            <button class="btn btn-primary">Kirim!</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
     <!-- Backsound -->
     <div class="backsound" id="backsound" onclick="playPause()">
       <span>
@@ -467,5 +522,23 @@
 
     <!-- My JS -->
     <script src="script.js"></script>
+
+    <!-- Google Sheet JS -->
+    <script>
+      window.addEventListener("load", function () {
+        const form = document.getElementById("my-form");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const data = new FormData(form);
+          const action = e.target.action;
+          fetch(action, {
+            method: "POST",
+            body: data,
+          }).then(() => {
+            alert("Konfirmasi kehadiran berhasil terkirim!");
+          });
+        });
+      });
+    </script>
   </body>
 </html>
