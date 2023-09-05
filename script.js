@@ -15,14 +15,22 @@ offcanvas.addEventListener("hidden.bs.offcanvas", function () {
 });
 
 // JS untuk BG Music
+const bgmContainer = document.querySelector("#backsound");
 const myAudio = document.querySelector("#myAudio");
+const bgmIcon = document.querySelector("#backsound i");
 
 var state = 0;
 function playPause() {
   if (state == 1) {
+    bgmIcon.classList.add("bi-music-note-list");
+    bgmIcon.classList.remove("bi-play-circle-fill");
+    bgmIcon.style.fontSize = "1.5rem";
     myAudio.muted = false;
     state = 0;
   } else {
+    bgmIcon.classList.remove("bi-music-note-list");
+    bgmIcon.classList.add("bi-play-circle-fill");
+    bgmIcon.style.fontSize = "2rem";
     myAudio.muted = "true";
     state = 1;
   }
@@ -33,7 +41,8 @@ function play() {
 
   window.onscroll = function () {};
   rootElement.style.scrollBehavior = "smooth";
-  localStorage.setItem("opened", "true");
+  bgmContainer.style.display = "flex";
+  // localStorage.setItem("opened", "true");
 }
 
 // JS untuk lock scrolling sebelum klik "Buka Undangan"
@@ -51,6 +60,17 @@ function disableScroll() {
   rootElement.style.scrollBehavior = "auto";
 }
 
-if (!localStorage.getItem("opened")) {
-  disableScroll();
-}
+disableScroll();
+// if (!localStorage.getItem("opened")) {
+// }
+
+// JS untuk mengambil parameter string di URL
+const urlParams = new URLSearchParams(window.location.search);
+const pronoun = urlParams.get("p") || "";
+const nama = urlParams.get("n") || "Bapak/Ibu/Saudara/i";
+// console.log(nama);
+
+const namaContainer = document.querySelector(".hero h4 span");
+namaContainer.innerText = `${pronoun} ${nama},`;
+
+document.querySelector("#nama").value = nama;

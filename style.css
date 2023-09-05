@@ -26,12 +26,26 @@ body {
   background-color: rgba(255, 255, 255, 0.3);
   transition: 0.3s;
   z-index: 999999999999999999999;
+  animation: rotating 4s linear infinite;
+  /* mix-blend-mode: difference; */
+  transform-origin: center;
+  justify-content: center;
+  align-items: center;
 }
 .backsound:hover {
   background-color: rgba(247, 130, 221, 0.8);
 }
 .backsound span {
   margin: auto;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 /* Akhir Backsound */
 
