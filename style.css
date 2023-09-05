@@ -16,7 +16,7 @@ body {
   position: fixed;
   width: 35px;
   height: 35px;
-  right: 0;
+  right: 15px;
   bottom: 20px;
   border: 1px solid #ccc;
   box-sizing: var(--shadow);
