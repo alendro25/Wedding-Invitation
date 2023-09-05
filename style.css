@@ -38,6 +38,9 @@ body {
 .backsound span {
   margin: auto;
 }
+.backsound i {
+  font-size: 0.9rem;
+}
 
 @keyframes rotating {
   from {
