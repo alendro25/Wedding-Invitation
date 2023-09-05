@@ -24,13 +24,13 @@ function playPause() {
   if (state == 1) {
     bgmIcon.classList.add("bi-music-note-list");
     bgmIcon.classList.remove("bi-play-circle-fill");
-    bgmIcon.style.fontSize = "1.5rem";
+    bgmIcon.style.fontSize = "0.9rem";
     myAudio.muted = false;
     state = 0;
   } else {
     bgmIcon.classList.remove("bi-music-note-list");
     bgmIcon.classList.add("bi-play-circle-fill");
-    bgmIcon.style.fontSize = "2rem";
+    bgmIcon.style.fontSize = "1rem";
     myAudio.muted = "true";
     state = 1;
   }
